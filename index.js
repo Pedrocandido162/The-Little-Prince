@@ -4,6 +4,7 @@ const botoesCarrossel = document.querySelectorAll('.botao');
 const imagens = document.querySelectorAll('.imagem');
 const audio = document.getElementById('meuAudio');
 const texto = document.getElementById('descricao-pagina')
+audio.style.display = 'none';
 console.log(lista);
 botoesCarrossel.forEach((botao, indice) => {
     botao.addEventListener('click', () => {
@@ -24,6 +25,12 @@ function MudarTexto(indice) {
 function MudarAudio(indice) {
     audio.src = lista[indice]
     audio.load();
+    if (indice == 0) {
+        audio.style.display = 'none';
+
+    } else {
+        audio.style.display = 'block';
+    }
 }
 function EscondeImagemAtiva() {
     const imagemAtiva = document.querySelector('.ativa');
