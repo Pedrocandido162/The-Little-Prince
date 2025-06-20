@@ -1,0 +1,128 @@
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #b6d1d6;
+            overflow: hidden;
+        }
+
+        main:after {
+            content: '';
+            min-height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: flex;
+        }
+
+        .carrossel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        aside {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            animation: transicao 2s;
+            top: 7vh;
+            left: 3vw;
+            height: 50vh;
+        }
+
+        .icone {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .Foto-Perfil {
+
+            margin: 0px;
+            width: 190px;
+            height: 190px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 7px solid;
+        }
+
+        audio {
+            margin-bottom: 2vh;
+        }
+
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            min-height: 95vh;
+            width: 100vw;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+
+        .descricao {
+            font-size: 24px;
+            color: black;
+
+        }
+
+        .botoes-carrossel {
+
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .botao {
+            background-color: #ffffff;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            border-color: black;
+        }
+
+        .botao.selecionado {
+            background-color: #1d8346;
+        }
+
+        .imagem {
+            width: 100vw;
+            height: 100vh;
+            object-fit: fill;
+            display: none;
+            animation: mudarImagem 3s;
+
+        }
+
+        .carrossel .imagem.ativa {
+            display: block;
+        }
+
+        @keyframes mudarImagem {
+            from {
+                opacity: 0.2;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes transicao {
+            from {
+                top: -50vh;
+                left: 3vw
+            }
+
+            to {
+                top: 7vh;
+                left: 3vw;
+            }
+        }
